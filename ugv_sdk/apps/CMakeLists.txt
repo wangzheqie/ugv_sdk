@@ -14,6 +14,9 @@ target_link_libraries(app_hunter_demo ugv_sdk)
 # add_executable(app_tracer_demo tracer_demo/tracer_demo.cpp)
 # target_link_libraries(app_tracer_demo ugv_sdk)
 
+add_executable(ranger_demo ranger_demo/ranger_demo.cpp)
+target_link_libraries(ranger_demo ugv_sdk)
+
 if(BUILD_MONITOR)
     add_subdirectory(scout_monitor)
 endif()

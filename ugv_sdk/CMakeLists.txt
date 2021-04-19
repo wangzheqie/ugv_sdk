@@ -93,6 +93,8 @@ add_library(${PROJECT_NAME}
     src/tracer_uart_parser.c
     src/bunker_base.cpp
     src/bunker_can_parser.c
+    src/ranger_base.cpp
+    src/ranger_can_parser.cpp
 )
 if(BUILD_WITHOUT_ROS)
     target_link_libraries(${PROJECT_NAME} wrp_io Threads::Threads)
