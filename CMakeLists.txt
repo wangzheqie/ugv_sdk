@@ -60,15 +60,14 @@ file(GLOB SOURCE_FILE_NAMES
 add_library(${PROJECT_NAME} SHARED ${SOURCE_FILE_NAMES})
 ament_target_dependencies(${PROJECT_NAME} async_port)
     
-install(TARGETS
-    ${PROJECT_NAME}
-    ARCHIVE DESTINATION lib/${PROJECT_NAME}
-    LIBRARY DESTINATION lib/${PROJECT_NAME}
-    RUNTIME DESTINATION bin/${PROJECT_NAME}
-    )
+install(
+  DIRECTORY include/ugv_sdk
+  DESTINATION include
+)
 
-install(DIRECTORY include/
-    DESTINATION include/
+install(
+  TARGETS ${PROJECT_NAME} 
+  DESTINATION lib/${PROJECT_NAME}
 )
 
 ament_export_include_directories(include)
